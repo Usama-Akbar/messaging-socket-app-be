@@ -37,7 +37,7 @@ app.use(`${baseAPIUrl}/`, messageRouter);
 
 const io = socketIo(server, {
   cors: {
-    origin: "http://localhost:3000", // Your frontend URL
+    origin: "https://messaging-socket-app-fe.vercel.app", // Your frontend URL
     methods: ["GET", "POST"]
   }
 });
