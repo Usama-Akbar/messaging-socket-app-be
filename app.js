@@ -23,7 +23,7 @@ connectDb();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(cors({
-  origin: "https://messaging-socket-app-fe.vercel.app", // Ensure no trailing slash
+  origin: "http://localhost:3000", // Ensure no trailing slash
   methods: ["GET", "POST"],
   credentials: true
 }));
@@ -41,7 +41,7 @@ app.use(`${baseAPIUrl}/`, messageRouter);
 
 const io = socketIo(server, {
   cors: {
-    origin: "https://messaging-socket-app-fe.vercel.app", // Your frontend URL
+    origin: "http://localhost:3000", // Your frontend URL
     methods: ["GET", "POST"]
   }
 });
