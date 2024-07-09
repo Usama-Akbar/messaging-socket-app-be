@@ -23,8 +23,9 @@ connectDb();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(cors({
-  origin: 'https://messaging-socket-app-fe.vercel.app', // Replace with your frontend URL
-  methods: ['GET', 'POST'],
+  origin: "https://messaging-socket-app-fe.vercel.app", // Ensure no trailing slash
+  methods: ["GET", "POST"],
+  credentials: true
 }));
 
 app.use(logger('dev'));
